@@ -38,7 +38,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-  #Blog.create(blogs_params) ga arukotode ichiranGAMEN ni Futatu hoson saretesimau... @blog.save　dakedeyoi!DiVE02 YORI
+    Blog.create(blogs_params)
     @blog = Blog.new(blogs_params)
     if @blog.save
      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
