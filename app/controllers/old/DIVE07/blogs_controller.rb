@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
     # edit, update, destroyで共通コード
     
     if @blog.update(blogs_params)
-      redirect_to blogs_path, notice: "ブログを更新しました！"
+      redirect_to blogs_path, notice: "ブログを新規作成しました！"
     else
       render 'edit'
     end
