@@ -45,7 +45,6 @@ class BlogsController < ApplicationController
     else
       # 入力フォームを再描画します。
       render 'new'
-      
     end
   end
 
