@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
     # edit, update, destroyで共通コード
     
     if @blog.update(blogs_params)
-      redirect_to blogs_path, notice: "ブログを新規作成しました！"
+      redirect_to blogs_path, notice: "ブログを更新しました！"
     else
       render 'edit'
     end
@@ -42,7 +42,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blogs_params)
     if @blog.save
      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
-      redirect_to blogs_path, notice: "ブログを作成しました！"
+      redirect_to blogs_path, notice: "ブログを作成しましたよよよよ！"
     else
       # 入力フォームを再描画します。
       render 'new'
