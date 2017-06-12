@@ -1,7 +1,9 @@
 class BlogsController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_blog, only: [:edit, :update, :destroy]
   def index
     @blogs=Blog.all
+
   end
 
   def new
@@ -50,7 +52,7 @@ class BlogsController < ApplicationController
 
   private
     def blogs_params
-      params.require(:blog).permit(:title, :content)
+      params.require(:blog).permit(:title, :content, :user_id)
     end
     
     # idをキーとして値を取得するメソッド

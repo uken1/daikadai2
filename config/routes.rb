@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'contacts/create'
 
 resources :blogs, only: [:index, :new, :create, :edit, :update ,:destroy] do
