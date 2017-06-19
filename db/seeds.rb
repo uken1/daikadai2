@@ -25,5 +25,5 @@ while n <= 100
     content: "hoge",
     user_id: n
   )
-  n = n + 1
+  n = n + 2
 end

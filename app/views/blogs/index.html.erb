@@ -5,8 +5,8 @@
       <%= link_to "ブログを作成", new_blog_path, class: 'btn btn-default' %>
     <% @blogs.each do |blog| %>
     <div class="row">
-    <% num=blog.user_id.to_i %> 
-      <p><%= User.find(num).name %></p>
+      <p><%= User.find_by(:id => blog.user_id).name %></p>
+
       <h4><strong><%= blog.title %></strong></h4>
       <p><%= blog.content %></p>
 
