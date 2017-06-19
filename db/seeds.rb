@@ -19,11 +19,11 @@
 end
 
 n = 1
-while n <= 200
+while n <= 100
   Blog.create(
     title: "あああ",
     content: "hoge",
     user_id: n
   )
-  n = n + 2
+  n = n + 1
 end
