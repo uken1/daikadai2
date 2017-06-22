@@ -13,6 +13,10 @@ resources :contacts, only: [:new, :create] do
       post :confirm
     end
   end
+
+if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+end
   
   root 'top#index'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -69,4 +73,6 @@ resources :contacts, only: [:new, :create] do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+
 end
