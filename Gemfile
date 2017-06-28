@@ -51,6 +51,18 @@ gem 'devise'
 
 gem 'faker'
 
-group :development do
+group :development,:test do
   gem 'letter_opener_web'
+  gem 'pry-rails'
+  gem 'better_errors'
+  
+gem 'rails_admin'
+
+gem 'cancan'
+
+gem 'pry-rails'
+gem 'better_errors'
+
+gem 'activeresource'
+
 end
