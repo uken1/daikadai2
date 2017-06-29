@@ -13,5 +13,4 @@ class PoemsController < ApplicationController
     def set_poem
       @poem = Poem.find(params[:id])
     end
- 
 end
