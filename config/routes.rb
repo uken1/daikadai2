@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  get 'contacts/create'
+  
+get 'contacts/create'
 #  get 'poem', url: '/poems/:id(.:format)', to: 'poems#show'
   
 resources :poems, only: [:index, :show] 
