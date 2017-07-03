@@ -1,11 +1,6 @@
-clasudo service postgresql startsudo service postgresql startFACEBOOK_ID_DEVELOPMENT=1954426281492531
-FACEBOOK_SECRET_DEVELOPMENT=6f3de7b8d06494d0390b86cf7c063fd7
-TWITTER_ID_DEVELOPMENT=74cDI7qY90VRHr6LpJD5Ke1R9
-TWITTER_SECRET_DEVELOPMENT=BhLnsjKMHuZJWQhIN6RW4CYzT3jHQxzSSbh2MkrECuYcCLet1Ysudo service postgresql startFACEBOOK_ID_DEVELOPMENT=1954426281492531
-FACEBOOK_SECRET_DEVELOPMENT=6f3de7b8d06494d0390b86cf7c063fd7
-TWITTER_ID_DEVELOPMENT=74cDI7qY90VRHr6LpJD5Ke1R9
-TWITTER_SECRET_DEVELOPMENT=BhLnsjKMHuZJWQhIN6RW4CYzT3jHQxzSSbh2MkrECuYcCLet1Yss Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
+    # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
 
     if @user.persisted?
@@ -16,8 +11,8 @@ TWITTER_SECRET_DEVELOPMENT=BhLnsjKMHuZJWQhIN6RW4CYzT3jHQxzSSbh2MkrECuYcCLet1Yss 
       redirect_to new_user_registration_url
     end
   end
-  
-   def twitter
+
+  def twitter
     # You need to implement the method below in your model
     @user = User.find_for_twitter_oauth(request.env["omniauth.auth"], current_user)
 
