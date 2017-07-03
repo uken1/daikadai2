@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
   
 get 'contacts/create'
 #  get 'poem', url: '/poems/:id(.:format)', to: 'poems#show'
