@@ -13,8 +13,18 @@
     <%= f.label :名前 %><br />
     <%= f.text_field :name, class: "form-control" %>
   </div>
-  
-  <% if @user.provider.blank? %>
+
+  <div class="field">
+    <%= profile_img(@user) if profile_img(@user) %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新", class: "btn btn-primary btn-block" %>
+  </div>
+
+<% if @user.provider.blank? %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -35,6 +45,11 @@
     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
   </div>
 
+<% end %>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
 <% end %>
 
 <h3>Cancel my account</h3>
