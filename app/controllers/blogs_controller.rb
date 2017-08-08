@@ -23,7 +23,7 @@ class BlogsController < ApplicationController
     # edit, update, destroyで共通コード
     
     if @blog.update(blogs_params)
-      redirect_to blogs_path, notice: "ブログを更新しました！"
+      redirect_to blogs_path, notice: "Instagramを更新しました！"
     else
       render 'edit'
     end
@@ -32,7 +32,7 @@ class BlogsController < ApplicationController
   def destroy
     # edit, update, destroyで共通コード
     @blog.destroy
-    redirect_to blogs_path, notice: "ブログを削除しました！"
+    redirect_to blogs_path, notice: "Instagramを削除しました！"
   end
   
   def confirm
@@ -45,7 +45,7 @@ class BlogsController < ApplicationController
     @blog.user_id = current_user.id
     if @blog.save
      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
-      redirect_to blogs_path, notice: "ブログを新規作成しました！"
+      redirect_to blogs_path, notice: "Instagramを新規作成しました！"
     else
       # エラー発生時に入力フォームを再描画します。
       render 'new'
@@ -54,7 +54,7 @@ class BlogsController < ApplicationController
 
   private
     def blogs_params
-      params.require(:blog).permit(:title, :content, :user_id)
+      params.require(:blog).permit(:title, :content, :user_id, :gzou, :gzou_cache)
     end
     
     # idをキーとして値を取得するメソッド

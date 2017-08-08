@@ -222,9 +222,8 @@ img {
 }
 
 img {
-  max-width: 10%;
+  max-width: 100%;
 }
-
 /**
  * Hide the overflow in IE.
  */

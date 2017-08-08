@@ -5,10 +5,14 @@ class ApplicationController < ActionController::Base
   
     # before_actionで下で定義したメソッドを実行
   before_action :configure_permitted_parameters, if: :devise_controller?
+  
+#  before_action :configure_permitted_parameters_1, if: :blogs_controller?
 
   #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入
  # PERMISSIBLE_ATTRIBUTES = %i(name)
  PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
+ 
+# PERMISSIBLE_ATTRIBUTES_1 = %i(name gzou gzou_cache)
 
   protected
 
@@ -17,4 +21,10 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
       devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
     end
+    
+#    def configure_permitted_parameters_1
+#      blog_parameter_sanitizer.permit(:edit, keys: PERMISSIBLE_ATTRIBUTES_1)
+#      blog_parameter_sanitizer.permit(:confirm, keys: PERMISSIBLE_ATTRIBUTES_1)
+#      blog_parameter_sanitizer.permit(:new, keys: PERMISSIBLE_ATTRIBUTES_1)
+#    end
 end

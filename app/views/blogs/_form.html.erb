@@ -10,6 +10,12 @@
     </ul>
   </div>
 <% end %>
+
+<div class="field">
+    <%= f.label :画像 %><br>
+    <%= f.file_field :gzou %>
+    <%= f.hidden_field :gzou_cache %>
+</div>
 <%= f.label :タイトル %>
 <%= f.text_field :title, class: 'form-control' %>
 <br>
