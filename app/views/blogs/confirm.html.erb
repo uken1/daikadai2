@@ -2,17 +2,17 @@
   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
     <h3>以下の内容で、送信する。</h3>
     <%= form_for(@blog) do |f| %>
-      <%= f.hidden_field :gzou_cache %>
+      <%= f.hidden_field :pic_cache %>
       <%= f.hidden_field :title %>
       <%= f.hidden_field :content %>
       <p>画像</p>
-      <p></p><%= image_tag(@blog.gzou.url) %></p>
+      <p></p><%= image_tag(@blog.pic.url) %></p>
       <p>タイトル:<%= @blog.title %></p>
       <p>本文:<%= @blog.content %></p>
       <%= f.submit "登録",class: 'btn btn-primary btn-block' %>
     <% end %>
     <%= form_for(@blog, url: new_blog_path, method: 'get') do |f| %>
-      <%= f.hidden_field :gzou %>
+      <%= f.hidden_field :pic %>
       <%= f.hidden_field :title %>
       <%= f.hidden_field :content %>
       <%= f.submit "もどる", name: 'back', class: 'btn btn-default btn-sm btn-success' %>
